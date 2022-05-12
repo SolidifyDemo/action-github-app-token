@@ -12,6 +12,10 @@ inputs:
     required: false
     description: 'Scope of installation account'
     default: ''
+  installation-id: 
+    required: false
+    description: 'What installation should be used(they differ in JWT)'
+    default: ''
 outputs:
   token:
     description: 'Github Token for App installation'

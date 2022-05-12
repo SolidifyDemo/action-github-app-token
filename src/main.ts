@@ -11,7 +11,7 @@ async function run(): Promise<void> {
     const privateKey: string = core.getInput('private_key');
     const appId: string = core.getInput('app_id');
     const scope: string = core.getInput('scope');
-    const installId: string = core.getInput('installationId');
+    const installId: string = core.getInput('installation-id');
     const appOctokit = new Octokit({
       authStrategy: createAppAuth,
       auth: {
@@ -32,7 +32,7 @@ async function run(): Promise<void> {
     {
         let index = installations.data.findIndex( (inst) => 
         {
-           return inst.id === parseInt(installId);          
+           return inst.id === Number(installId);          
         } );      
         installationId = installations.data[index].id;
         
